@@ -5,7 +5,7 @@ require("config.lazy")
 -- vim.o.background = "light"
 vim.o.background = "dark"
 vim.opt.clipboard = "unnamedplus"
-vim.cmd([[colorscheme gruvbox]])
+-- vim.cmd([[colorscheme gruvbox]])
 vim.api.nvim_set_keymap("n", "<leader>td", ':r! date "+\\%Y-\\%m-\\%d"<CR>', { noremap = true, silent = true })
 
 vim.g.clipboard = {
