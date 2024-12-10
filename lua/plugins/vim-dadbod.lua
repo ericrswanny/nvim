@@ -1,3 +1,7 @@
+if true then
+  return {}
+end
+
 return {
   -- Add tpope's vim-dadbod plugin
   {
