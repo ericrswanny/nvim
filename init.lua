@@ -3,7 +3,11 @@ require("config.lazy")
 
 -- Set Gruvbox as the colorscheme
 vim.o.background = "dark"
+vim.cmd([[colorscheme dracula]])
 -- vim.cmd([[colorscheme gruvbox]])
+-- vim.cmd([[colorscheme nord]])
+
+vim.o.termguicolors = true
 
 -- Set up date shortcut
 vim.api.nvim_set_keymap("n", "<leader>td", ":r! date '+\\%Y-\\%m-\\%d'<CR>", { noremap = true, silent = true })
@@ -11,6 +15,10 @@ vim.api.nvim_set_keymap("n", "<leader>td", ":r! date '+\\%Y-\\%m-\\%d'<CR>", { n
 -- Detect the environment
 local os_name = vim.loop.os_uname().sysname
 local display_server = os.getenv("XDG_SESSION_TYPE") -- "x11", "wayland", or nil
+
+-- Set the timeout for mapped key sequences
+vim.opt.timeoutlen = 100  -- Reduce the time for normal key mappings (default is 1000ms)
+vim.opt.ttimeoutlen = 10  -- Reduce the time for terminal key sequences (default is 50ms)
 
 -- Define clipboard settings
 if os_name == "Linux" and display_server == "x11" then
@@ -62,6 +70,6 @@ else
 end
 
 -- Gruvbox setup with contrast
-require("gruvbox").setup({
-  contrast = "hard", -- Can be "soft", "medium", or "hard"
-})
+-- require("gruvbox").setup({
+--   contrast = "hard", -- Can be "soft", "medium", or "hard"
+-- })
