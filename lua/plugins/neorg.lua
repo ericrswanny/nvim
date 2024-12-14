@@ -15,9 +15,9 @@ return {
                   highlight = "*", -- Single asterisk for highlighting
                 },
               },
-              custom_highlights = {
-                highlight = { fg = "#f28500", bg = "#2c2c2c" }, -- Custom color for highlights
-              },
+              -- custom_highlights = {
+              --   highlight = { fg = "#f28500", bg = "#2c2c2c" }, -- Custom color for highlights
+              -- },
             },
           },
           ["core.dirman"] = {
@@ -34,6 +34,11 @@ return {
           ["core.esupports.metagen"] = {
             config = {
               type = "auto",
+            },
+          },
+          ["core.export"] = {
+            config = {
+              export_type = "markdown",
             },
           },
         },
